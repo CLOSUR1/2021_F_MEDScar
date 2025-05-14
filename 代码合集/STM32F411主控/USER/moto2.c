@@ -107,14 +107,14 @@ void MOTO_IO_Init(void) //PB 0 1 2 10
 {    	 
   GPIO_InitTypeDef  GPIO_InitStructure;
 
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);//使能GPIOF时钟
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);//???GPIOF???
 
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2| GPIO_Pin_10 | GPIO_Pin_0;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;//普通输出模式
-  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//推挽输出
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;//????????
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//???????
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100MHz
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
-  GPIO_Init(GPIOB, &GPIO_InitStructure);//初始化
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//????
+  GPIO_Init(GPIOB, &GPIO_InitStructure);//?????
 	
 	GPIO_ResetBits(GPIOB,GPIO_Pin_1 | GPIO_Pin_2| GPIO_Pin_10 | GPIO_Pin_0);
 }
@@ -237,22 +237,22 @@ void moto_go2(float v,float dead)
 }
 
 
-void moto_duty1(float duty)//舵机按占空比操作(Duty:0-100)
+void moto_duty1(float duty)//????????????(Duty:0-100)
 { 
 	TIM_SetCompare1(TIM3,duty);	
 }
 
-void moto_duty2(float duty)//舵机按占空比操作(Duty:0-100)
+void moto_duty2(float duty)//????????????(Duty:0-100)
 { 
   TIM_SetCompare2(TIM3,duty);	
 }
 
-void moto_duty3(float duty)//舵机按占空比操作(Duty:0-100)
+void moto_duty3(float duty)//????????????(Duty:0-100)
 { 
   TIM_SetCompare3(TIM3,duty);		
 }
 
-void moto_duty4(float duty)//舵机按占空比操作(Duty:0-100)
+void moto_duty4(float duty)//????????????(Duty:0-100)
 { 
   TIM_SetCompare4(TIM3,duty);		
 }
